@@ -1,4 +1,4 @@
-package cst438hw2.configuration;
+package cst438hw2;
 
 import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.context.annotation.Bean;
