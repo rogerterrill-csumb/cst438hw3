@@ -13,5 +13,18 @@ District: <span th:inline="text"> [[${city.district}]]</span><br/>
 Population: <span th:inline="text"> [[${city.population}]]</span><br/>
 Local Weather: <span th:inline="text"> [[${city.temp}]]</span> Degrees F<br/>
 LocalTime: <span th:inline="text"> [[${city.time}]]</span><br/>
+<br />
+For a fabulous weekend get away for 2 to [[${city.name}]] sign up here:
+<form action="#" th:action="@{/cities/reservation}" method="post">
+  Email: <input type="text" th:name="email"/><br />
+  <input type="radio" th:value="luxury" th:name="level">
+  <label for="luxury">Luxury $1000</label><br />
+  <input type="radio" th:value="'very good'" th:name="level">
+  <label for="very good">Very Good $500</label><br />
+  <input type="radio" th:value="good" th:name="level">
+  <label for="good">Good $350</label><br />
+  <input type="hidden" th:value="${city.name}" th:name="city" />
+  <input type="submit" value="Submit" />
+</form>
 </body>
 </html>
